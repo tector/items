@@ -5,4 +5,4 @@
 .project
 bin/*
 test/*
-
+bower_components/
