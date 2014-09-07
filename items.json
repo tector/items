@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Match",
+        "description": "",
+        "type": "resource",
+        "default_drop_chance": 0.3,
+        "is_bulky": false
+    },
+    {
+        "name": "Stick",
+        "description": "",
+        "type": "resource",
+        "default_drop_chance": 0.4,
+        "is_bulky": false
+    },
+    {
+        "name": "box",
+        "description": "",
+        "type": "container",
+        "default_drop_chance": 0.1,
+        "is_bulky": true
+    },
+    {
+        "name": "blue pill",
+        "description": "",
+        "type": "drug",
+        "default_drop_chance": 0.08
+    },
+    {
+        "name": "moldy bread",
+        "description": "",
+        "type": "food",
+        "default_drop_chance": 0.1
+    }
+]

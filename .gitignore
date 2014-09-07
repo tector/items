@@ -1,0 +1,8 @@
+*~
+*.ini
+*.bak
+*.tmp
+.project
+bin/*
+test/*
+

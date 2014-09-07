@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="item.classes.js"></script>
+    </head>
+    <body>
+
+    <script  type="text/javascript">
+        var res = new ResourceItem();
+        console.log(res instanceof ResourceItem);
+        console.log(res instanceof Item);
+
+        var food = new FoodItem();
+        console.log(food instanceof FoodItem);
+        console.log(food instanceof Item);
+
+        var obj = new ObjectItem();
+        console.log(obj instanceof ObjectItem);
+        console.log(obj instanceof Item);
+
+        var con = new ContainerItem();
+        console.log(con instanceof ContainerItem);
+        console.log(con instanceof Item);
+
+
+        var itemsJsonData = function () {
+            var json = null;
+            $.ajax({
+                //jsonp: 'jsonp_callback',
+                async: false,
+                global: false,
+                url: "items.json",
+                dataType: "json",
+                success: function (data) {
+                    json = data;
+                },
+                error: function (data) {
+                }
+            });
+
+            return json;
+        };
+
+        var itemList = [];
+        var items = itemsJsonData();
+        for (var i=0; i<items.length; i++) {
+            var item = null;
+            switch (items[i]['type'].toLowerCase()) {
+                case 'resource': item = new ResourceItem(); break;
+                case 'food': item = new FoodItem(); break;
+                case 'drug': item = new DrugItem(); break;
+                case 'container': item = new ContainerItem(); break;
+                default: console.log(items[i]['type']);break;
+            }
+
+            for (j in items[i]) {
+                item[j] = items[i][j];
+            }
+
+            itemList.push( item);
+        }
+
+        console.log(itemList);
+
+    </script>
+    </body>
+</html>

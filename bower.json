@@ -1,0 +1,31 @@
+{
+  "name": "items",
+  "version": "0.0.0",
+  "authors": [
+    "tector <cotoyomi@yahoo.de>"
+  ],
+  "description": "item and crafting system for browergames",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "items",
+    "crafting",
+    "inventory",
+    "browsergame"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.1.1",
+    "angular": "~1.2.18"
+  }
+}
